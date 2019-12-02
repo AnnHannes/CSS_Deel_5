@@ -1,0 +1,101 @@
+body {
+    font-family: sans-serif;
+    background-color: #ccc;
+}
+
+h2 {
+    font-style: italic;
+}
+
+article {
+    width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 4px solid #f04c25;
+}
+
+@keyframes verkleuren_en_verplaatsen {
+    0% {
+        border-radius: 50%;
+        background-color: red;
+    }
+
+    25% {
+        background-color: orange;
+    }
+
+    50% {
+        background-color: yellow;
+    }
+
+    75% {
+        background-color: green;
+    }
+
+    100% {
+        border-radius: 0%;
+        background-color: blue;
+        transform: translateX(770px);
+    }
+}
+
+.vorm {
+    height: 30px;
+    width: 30px;
+    animation-name: verkleuren_en_verplaatsen;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+    animation-delay: 2s;
+}
+
+@keyframes achtergrond_bewegen {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: -800px 0;
+    }
+}
+
+@keyframes rijden {
+    from {
+        transform: translateX(-30px);
+    }
+
+    to {
+        transform: translateX(770px);
+    }
+}
+
+section {
+    position: relative;
+}
+
+.landschap {
+    background-image: url(landschap.jpg);
+    background-repeat: repeat-x;
+    animation-name: achtergrond_bewegen;
+    animation-duration: 12s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    height: 150px;
+}
+
+
+.autootje {
+    background-image: url(auto.png);
+    background-repeat: no-repeat;
+    animation-name: rijden;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    position: absolute;
+    top: 165px;
+    height: 30px;
+    width: 67px;
+}
